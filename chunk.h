@@ -6,9 +6,15 @@
 
 typedef enum {
   OP_CONSTANT,
+  OP_ADD,
+  OP_SUBTRACT,
+  OP_MULTIPLY,
+  OP_DIVIDE,
+  OP_NEGATE,
   OP_RETURN,
 } Opcode;
 
+// TODO store lines only when it changes {1,3} and search using binary search
 typedef struct {
   int count;
   int capacity;
