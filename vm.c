@@ -22,11 +22,14 @@ static void runtimeError(const char *format, ...) {
   size_t instruction = vm.ip - vm.chunk->code - 1;
   int line = vm.chunk->lines[instruction];
   fprintf(stderr, "[line %d] in script\n", line);
-  resetStack();
+  /* resetStack(); */
   /* vm.objects = NULL; */
 }
-void initVM() { vm.stackTop = vm.stack; }
-void freeVM() { /* freeObjects();  */ }
+void initVM() {
+  resetStack();
+  vm.objects = NULL;
+}
+void freeVM() { freeObjects(); }
 void push(Value value) {
   *vm.stackTop = value;
   vm.stackTop++;
