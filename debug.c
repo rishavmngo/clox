@@ -1,5 +1,5 @@
 #include "debug.h"
-#include "chunk.h"
+/* #include "chunk.h" */
 #include "value.h"
 #include <stdint.h>
 #include <stdio.h>

@@ -1,6 +1,7 @@
 #include "chunk.h"
 #include "memory.h"
-#include "value.h"
+/* #include "value.h" */
+#include <stdio.h>
 
 void initChunk(Chunk *chunk) {
   chunk->count = 0;
@@ -25,6 +26,7 @@ void writeChunk(Chunk *chunk, uint8_t byte, int line) {
 }
 
 int addConstant(Chunk *chunk, Value value) {
+  printf("testing at 1: %d", IS_NUMBER(value));
   writeValueArray(&chunk->constants, value);
   return chunk->constants.count - 1;
 }

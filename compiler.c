@@ -95,6 +95,7 @@ static void emitBytes(uint8_t byte1, uint8_t byte2) {
 }
 static void emitReturn() { emitByte(OP_RETURN); }
 static uint8_t makeConstant(Value value) {
+  printf("testing at 1: %d", IS_NUMBER(value));
   int constant = addConstant(currentChunk(), value);
   if (constant > UINT8_MAX) {
     error("Too many constants in one chunk.");

@@ -13,8 +13,6 @@ typedef enum {
   VAL_OBJ,
 } ValueType;
 
-// typedef double Value;
-
 typedef struct {
   ValueType type;
   union {
